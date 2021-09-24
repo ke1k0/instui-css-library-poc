@@ -1,0 +1,80 @@
+@import "variables";
+
+#{$checkboxClass} {
+  position: relative;
+  width: 100%;
+
+  &__label,
+  label#{$checkboxClass}__label {
+    all: initial;
+    direction: inherit;
+    text-align: start;
+
+    display: flex;
+    align-items: flex-start;
+
+    flex: 1 1 auto;
+    min-width: 0.0625rem;
+    color: $colorTextDarkest;
+    font-family: $typographyFontFamily;
+    font-weight: $typographyFontWeightNormal;
+    line-height: $typographyLineHeightCondensed;
+
+    @include sizes();
+
+    &::before {
+      content: '';
+      color: $colorTextLightest;
+      background-color: $colorBorderLightest;
+      background-repeat: no-repeat;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      flex-shrink: 0;
+      transition: all 0.2s;
+      border: $borderWidthSmall solid $colorBorderDark;
+      border-radius: $borderRadiusMedium;
+      margin-block-end: 0;
+      margin-block-start: 0;
+      margin-inline-end: $spacingXSmall;
+      margin-inline-start: 0;
+      padding: $spacingXxxSmall;
+    }
+
+    input:disabled + & {
+      @extend %disabledState;
+    }
+
+    input:checked + &,
+    .isIndeterminate input + & {
+      color: $colorTextDarkest;
+
+      &::before {
+        background-color: $colorBackgroundDarkest;
+        border-color: $colorBorderDarkest;
+      }
+    }
+  }
+
+  &__input,
+  input#{$checkboxClass}__input {
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    line-height: inherit;
+    width: auto;
+    position: absolute;
+    top: 0;
+    inset-inline-start: 0;
+    inset-inline-end: auto;
+    opacity: 0.0001; /* selenium cannot find fully transparent elements */
+  }
+
+  &.isDisabled input:not([disabled]) + #{$checkboxClass}__label,
+  &:not(.isDisabled) input:disabled + #{$checkboxClass}__label {
+    @extend %disabledState;
+  }
+}

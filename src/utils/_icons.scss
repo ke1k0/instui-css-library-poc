@@ -1,0 +1,16 @@
+%icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  margin: -0.0625rem 0;
+  vertical-align: middle;
+  line-height: 1;
+  color: inherit;
+}
+
+.icon {
+  @extend %icon;
+}

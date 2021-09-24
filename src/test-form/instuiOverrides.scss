@@ -1,0 +1,49 @@
+@import "../canvas-theme/theme";
+@import "../ui-checkbox/checkbox";
+
+body {
+  font-family: $typographyFontFamily;
+}
+
+.app {
+  font-family: $typographyFontFamily;
+  color: $colorLicorice;
+
+  &__title {
+    margin: 24px 0 0;
+    font-size: 28px;
+    line-height: 36px;
+    font-weight: $typographyFontWeightNormal;
+  }
+
+  &__subtitle {
+    margin: 12px 0 0;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__signIn {
+    margin: 40px 0 24px;
+  }
+
+  &__divider {
+    border: 1px solid $colorTiara
+  }
+
+  &__registerTitle {
+    font-size: 22px;
+    line-height: 28px;
+    font-weight: normal;
+    margin: 24px 0 40px;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}
+
+.form {
+  &__input {
+    margin-top: 24px;
+  }
+}

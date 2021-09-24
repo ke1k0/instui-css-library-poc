@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Instructure UI CSS Components</title>
+
+        <style type="text/css">
+            body {
+                font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                'Droid Sans', 'Helvetica Neue', sans-serif;
+            }
+        </style>
+
+        <meta name="description" content="Instructure UI CSS Components" />
+
+        <link rel="stylesheet" href="dist/canvas-theme/theme.css">
+<!--        <link rel="stylesheet" href="dist/ui-buttons/v1/buttons.css">-->
+        <link rel="stylesheet" href="dist/ui-form-field/formField.css">
+        <link rel="stylesheet" href="dist/ui-text-input/textInput.css">
+
+    </head>
+
+    <body>
+    <div id="app">
+        <div class="formFields" style="padding: 20px; background:#efefef;">
+            <label class="formField" style="margin-top: 30px;">
+                <div class="formField__label">Label</div>
+                <input id="1" class="formField__input textInput" type="text" value="Input" />
+                <span class="formField__message">Hint</span>
+            </label>
+            <div class="formField" style="margin-top: 30px;">
+                <label for="2" class="formField__label">
+                    Label
+                </label>
+                <input id="2" class="formField__input textInput" type="text" value="Input" />
+                <span class="formField__message">Hint</span>
+                <span class="formField__message formField__message--error">Error</span>
+                <span class="formField__message formField__message--success">Success</span>
+            </div>
+
+        </div>
+
+        <div class="formFields" style="padding: 20px; background:#efefef; margin-top: 30px;">
+            <label class="formField" style="margin-top: 30px;">
+                <div class="formField__label">Label</div>
+                <div class="formField__input textInputWrapper">
+                    <input id="21" class="textInputWrapper__input" type="text" value="Input" />
+                </div>
+                <span class="formField__message">Hint</span>
+            </label>
+            <div class="formField" style="margin-top: 30px;">
+                <label for="22" class="formField__label">
+                    Label
+                </label>
+                <div class="formField__input textInputWrapper">
+                    <input id="22" class="textInputWrapper__input" type="text" value="Input" />
+                </div>
+                <span class="formField__message">Hint</span>
+                <span class="formField__message formField__message--error">Error</span>
+                <span class="formField__message formField__message--success">Success</span>
+            </div>
+
+        </div>
+    </div>
+    </body>
+</html>

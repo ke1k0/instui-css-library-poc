@@ -1,0 +1,83 @@
+@import "../utils/common";
+@import "../utils/icons";
+@import "../canvas-theme/theme";
+
+$inputClass: '.textInput';
+
+$borderWidth: $borderWidthSmall;
+$horizontalPadding: $spacingSmall;
+
+@mixin sizes {
+  font-size: $typographyFontSizeMedium;
+  height: calc(#{$formInputHeightMedium} - (2 * #{$borderWidth}));
+  line-height: calc(#{$formInputHeightMedium} - (2 * #{$borderWidth}));
+
+  &--small {
+    font-size: $typographyFontSizeSmall;
+    height: calc(#{$formInputHeightSmall} - (2 * #{$borderWidth}));
+    line-height: calc(#{$formInputHeightSmall} - (2 * #{$borderWidth}));
+  }
+
+  &--large {
+    font-size: $typographyFontSizeLarge;
+    height: calc(#{$formInputHeightLarge} - (2 * #{$borderWidth}));
+    line-height: calc(#{$formInputHeightLarge} - (2 * #{$borderWidth}));
+  }
+}
+
+@mixin inputWrapper {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+
+  border: $borderWidthSmall $borderStyle $colorBorderMedium;
+  border-radius: $borderRadiusMedium;
+  background: $colorBorderLightest;
+
+  &:disabled,
+  &.isDisabled {
+    @extend %disabledState;
+  }
+
+  &.isInvalid {
+    border-color: $colorBorderDanger;
+  }
+
+  @content;
+}
+
+@mixin input {
+  all: initial;
+
+  &::-ms-clear {
+    display: none;
+  }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  appearance: none;
+  //margin: 0;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  outline: none;
+  font-family: $typographyFontFamily;
+  font-weight: $typographyFontWeightNormal;
+  color: $colorTextDarkest;
+  padding: 0 $horizontalPadding;
+  background: transparent;
+  border: none;
+  vertical-align: baseline;
+
+  &[autocomplete="off"]::-webkit-contacts-auto-fill-button {
+    display: none !important;
+  }
+
+  &::placeholder {
+    color: $colorTextDark;
+  }
+
+  @include sizes;
+
+  @content;
+}

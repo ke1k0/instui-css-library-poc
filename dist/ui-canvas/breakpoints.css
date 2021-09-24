@@ -1,0 +1,11 @@
+:root {
+  --breakpointXxSmall: 8em;
+  --breakpointXSmall: 16em;
+  --breakpointSmall: 30em;
+  --breakpointMedium: 48em;
+  --breakpointLarge: 62em;
+  --breakpointXLarge: 75em;
+  --breakpointMaxWidth: 61.9375em;
+}
+
+/*# sourceMappingURL=breakpoints.css.map */

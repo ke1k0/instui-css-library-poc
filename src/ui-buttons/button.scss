@@ -1,0 +1,95 @@
+@import "variables";
+
+#{$buttonClass} {
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow: visible;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $colorTextDarkest;
+  background: none;
+
+  position: relative;
+
+  width: auto;
+  cursor: pointer;
+  user-select: none;
+
+  font-family: $typographyFontFamily;
+  font-weight: $typographyFontWeightNormal;
+  line-height: $typographyLineHeightFit;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: normal;
+
+  transition: background 0.2s, transform 0.2s;
+  transform: none;
+
+  border-style: $borderStyle;
+  border-width: $borderWidthSmall;
+  border-radius: $borderRadiusMedium;
+
+  @include sizes;
+
+  &:not(#{$buttonClass}--condensed) {
+    @include colors;
+  }
+
+  &:disabled,
+  &.isDisabled {
+    @extend %disabledState;
+  }
+
+  &:hover {
+    transform: none;
+  }
+
+  & > svg {
+    @extend %icon;
+  }
+
+  &#{$buttonClass}--iconRight > svg {
+    padding-inline-start: $spacingXSmall;
+  }
+
+  &#{$buttonClass}--iconLeft > svg {
+    padding-inline-end: $spacingXSmall;
+  }
+
+  &#{$buttonClass}--iconOnly {
+    padding: 0;
+
+    &#{$buttonClass}--circle {
+      border-radius: 50%;
+    }
+  }
+
+  #{$enabled} {
+    appearance: none;
+    text-decoration: none; /* for links styled as buttons */
+    touch-action: manipulation;
+
+    * {
+      pointer-events: none; /* Ensures that button or link is always the event target */
+    }
+  }
+
+  &#{$buttonClass}--withoutBorder {
+    border-style: none;
+  }
+
+  &#{$buttonClass}--condensed {
+    @include getColors($primary);
+    @extend #{$buttonClass}--withoutBorder;
+    @extend #{$buttonClass}--withoutBackground;
+
+    padding: 0;
+
+    &#{$buttonClass}--primaryInverse {
+      @include getColors($primaryInverse);
+    }
+  }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Instructure UI CSS Components</title>
+
+        <style type="text/css">
+            body {
+                font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                'Droid Sans', 'Helvetica Neue', sans-serif;
+            }
+        </style>
+
+        <meta name="description" content="Instructure UI CSS Components" />
+
+        <link rel="stylesheet" href="dist/canvas-theme/theme.css">
+        <link rel="stylesheet" href="dist/ui-checkbox/checkbox.css">
+
+    </head>
+
+    <body>
+    <div id="app">
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox" style="margin-top: 20px;">
+                <input id="1" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="1" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox" style="margin-top: 20px;">
+                <input id="12" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="12" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isIndeterminate" style="margin-top: 20px;">
+                <input id="12i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="12i" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isIndeterminate" style="margin-top: 20px;">
+                <input id="12ib" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="12ib" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox checkbox--large" style="margin-top: 20px;">
+                <input id="2" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="2" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--large" style="margin-top: 20px;">
+                <input id="22" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="22" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--large isIndeterminate" style="margin-top: 20px;">
+                <input id="22i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="22i" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--large isIndeterminate" style="margin-top: 20px;">
+                <input id="22ib" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="22ib" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox checkbox--small" style="margin-top: 20px;">
+                <input id="3" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="3" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--small" style="margin-top: 20px;">
+                <input id="32" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="32" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--small isIndeterminate" style="margin-top: 20px;">
+                <input id="32i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="32i" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox checkbox--small isIndeterminate" style="margin-top: 20px;">
+                <input id="32ib" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="32ib" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox" style="margin-top: 20px;">
+                <input disabled id="4" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="4" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox" style="margin-top: 20px;">
+                <input disabled id="41" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="41" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isIndeterminate" style="margin-top: 20px;">
+                <input disabled id="41i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="41i" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox isDisabled" style="margin-top: 20px;">
+                <input id="5" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="5" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isDisabled" style="margin-top: 20px;">
+                <input id="6" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="6" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isDisabled isIndeterminate" style="margin-top: 20px;">
+                <input id="6i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="6i" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+        <div class="checkboxes" style="padding: 20px; background:#efefef;">
+            <div class="checkbox isDisabled" style="margin-top: 20px;">
+                <input disabled id="7" class="checkbox__input" type="checkbox" value="Input" />
+                <label for="7" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isDisabled" style="margin-top: 20px;">
+                <input disabled id="8" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="8" class="checkbox__label">Label</label>
+            </div>
+
+            <div class="checkbox isDisabled isIndeterminate" style="margin-top: 20px;">
+                <input disabled id="8i" class="checkbox__input" type="checkbox" value="Input" checked />
+                <label for="8i" class="checkbox__label">Label</label>
+            </div>
+        </div>
+
+    </div>
+    </body>
+</html>

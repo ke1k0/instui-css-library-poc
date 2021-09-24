@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+.textInputWrapper:disabled, .textInputWrapper.isDisabled, .textInput:disabled, .textInput.isDisabled,
+input[type].textInput:disabled,
+input[type].textInput.isDisabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.textInputWrapper > svg, .icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  margin: -0.0625rem 0;
+  vertical-align: middle;
+  line-height: 1;
+  color: inherit;
+}
+
+.textInput,
+input[type].textInput {
+  all: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  appearance: none;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  outline: none;
+  font-family: LatoWeb, Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #2D3B45;
+  padding: 0 0.75rem;
+  background: transparent;
+  border: none;
+  vertical-align: baseline;
+  font-size: 1rem;
+  height: calc(2.375rem - (2 * 0.0625rem));
+  line-height: calc(2.375rem - (2 * 0.0625rem));
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  border: 0.0625rem solid #C7CDD1;
+  border-radius: 0.25rem;
+  background: #FFFFFF;
+}
+.textInput::-ms-clear,
+input[type].textInput::-ms-clear {
+  display: none;
+}
+.textInput[autocomplete=off]::-webkit-contacts-auto-fill-button,
+input[type].textInput[autocomplete=off]::-webkit-contacts-auto-fill-button {
+  display: none !important;
+}
+.textInput::placeholder,
+input[type].textInput::placeholder {
+  color: #8B969E;
+}
+.textInput--small,
+input[type].textInput--small {
+  font-size: 0.875rem;
+  height: calc(1.75rem - (2 * 0.0625rem));
+  line-height: calc(1.75rem - (2 * 0.0625rem));
+}
+.textInput--large,
+input[type].textInput--large {
+  font-size: 1.375rem;
+  height: calc(3rem - (2 * 0.0625rem));
+  line-height: calc(3rem - (2 * 0.0625rem));
+}
+.textInput.isInvalid,
+input[type].textInput.isInvalid {
+  border-color: #EE0612;
+}
+
+.textInputWrapper {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  border: 0.0625rem solid #C7CDD1;
+  border-radius: 0.25rem;
+  background: #FFFFFF;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+.textInputWrapper.isInvalid {
+  border-color: #EE0612;
+}
+.textInputWrapper__input {
+  all: initial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  appearance: none;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+  outline: none;
+  font-family: LatoWeb, Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #2D3B45;
+  padding: 0 0.75rem;
+  background: transparent;
+  border: none;
+  vertical-align: baseline;
+  font-size: 1rem;
+  height: calc(2.375rem - (2 * 0.0625rem));
+  line-height: calc(2.375rem - (2 * 0.0625rem));
+  flex: 1 1;
+}
+.textInputWrapper__input::-ms-clear {
+  display: none;
+}
+.textInputWrapper__input[autocomplete=off]::-webkit-contacts-auto-fill-button {
+  display: none !important;
+}
+.textInputWrapper__input::placeholder {
+  color: #8B969E;
+}
+.textInputWrapper__input--small {
+  font-size: 0.875rem;
+  height: calc(1.75rem - (2 * 0.0625rem));
+  line-height: calc(1.75rem - (2 * 0.0625rem));
+}
+.textInputWrapper__input--large {
+  font-size: 1.375rem;
+  height: calc(3rem - (2 * 0.0625rem));
+  line-height: calc(3rem - (2 * 0.0625rem));
+}
+.textInputWrapper > *:first-child:not(.textInputWrapper__input) {
+  margin-inline-start: 0.75rem;
+}
+.textInputWrapper > *:last-child:not(.textInputWrapper__input) {
+  margin-inline-end: 0.75rem;
+}
+
+/*# sourceMappingURL=textInput.css.map */

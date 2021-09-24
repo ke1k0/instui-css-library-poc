@@ -1,0 +1,33 @@
+@import "../utils/common";
+@import "../utils/icons";
+@import "../canvas-theme/theme";
+
+$linkClass: '.link';
+
+@mixin colors {
+  &,
+  &:focus {
+    color: $colorTextLink;
+  }
+
+  &:hover,
+  &:active {
+    color: darken($colorTextLink, 10);
+    text-decoration: none;
+  }
+
+  &--inverse {
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: $colorTextLight;
+    }
+  }
+}
+
+%iconBase {
+  @extend %icon;
+  display: inline-flex;
+  font-size: 1.125em; /* make icon slightly larger than inherited font-size */
+}

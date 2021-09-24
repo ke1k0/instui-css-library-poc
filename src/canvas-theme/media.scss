@@ -1,0 +1,5 @@
+@import "breakpoints";
+
+$mediaMediumMin: 'min-width: #{$breakpointMedium}';
+$mediaLargeMin: 'min-width: #{$breakpointLarge}';
+$mediaXLargeMin: 'min-width: #{$breakpointXLarge}';

@@ -1,0 +1,35 @@
+@import "variables";
+
+#{$inputClass},
+input[type]#{$inputClass} {
+  @include input;
+  @include inputWrapper;
+}
+
+#{$inputClass}Wrapper {
+  @include inputWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  };
+
+  &__input {
+    @include input {
+      flex: 1 1;
+    };
+  }
+
+  & > svg {
+    @extend %icon;
+  }
+
+  & > * {
+    &:first-child:not(#{$inputClass}Wrapper__input) {
+      margin-inline-start: $horizontalPadding;
+    }
+
+    &:last-child:not(#{$inputClass}Wrapper__input) {
+      margin-inline-end: $horizontalPadding;
+    }
+  }
+}

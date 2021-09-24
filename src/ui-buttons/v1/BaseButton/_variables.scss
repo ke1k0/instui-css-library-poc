@@ -1,0 +1,127 @@
+@import "../../../canvas-theme/theme";
+
+$activeShadow: inset 0 0 0.1875rem 0.0625rem;
+
+$primary: (
+  "textColor": $colorTextLightest,
+  "ghostTextColor": $colorTextBrand,
+  "backgroundColor": $colorBackgroundBrand,
+  "borderColor": $colorBorderBrand,
+  "ghostBorderColor": $colorBorderBrand
+);
+
+$secondary: (
+  "backgroundColor": $colorBackgroundLight,
+  "borderColor": $colorBorderLight,
+  "ghostBorderColor": $colorBorderDarkest,
+  "textColor": $colorTextDarkest,
+  "ghostTextColor": $colorTextDarkest
+);
+
+$success: (
+  "backgroundColor": $colorBackgroundSuccess,
+  "borderColor": $colorBorderSuccess,
+  "textColor": $colorTextLightest,
+  "ghostTextColor": $colorTextSuccess
+);
+
+$danger: (
+  "backgroundColor": $colorBackgroundDanger,
+  "borderColor": $colorBorderDanger,
+  "textColor": $colorTextLightest,
+  "ghostTextColor": $colorTextDanger
+);
+
+$primaryInverse: (
+  "backgroundColor": $colorBackgroundLightest,
+  "borderColor": $colorBorderLightest,
+  "textColor": $colorTextDarkest,
+  "ghostTextColor": $colorTextLightest
+);
+
+@function getColorVariant ($style, $variable) {
+  $textColor: map-get($style, "textColor");
+  $ghostTextColor: map-get($style, "ghostTextColor");
+  $backgroundColor: map-get($style, "backgroundColor");
+  $borderColor: map-get($style, "borderColor");
+  $ghostBorderColor: map-get($style, "ghostBorderColor");
+
+  @if $ghostBorderColor == null {
+    $ghostBorderColor: $borderColor;
+  }
+
+  $map: (
+    "Color": $textColor,
+    "BorderColor": darken($borderColor, 10),
+    "Background": $backgroundColor,
+    "HoverBackground": darken($backgroundColor, 10),
+    "ActiveBackground": darken($backgroundColor, 10),
+    "ActiveBoxShadow": $activeShadow darken($borderColor, 20),
+
+    "GhostColor": $ghostTextColor,
+    "GhostBorderColor": $ghostBorderColor,
+    "GhostBackground": transparent,
+    "GhostHoverBackground": rgba($ghostTextColor, 0.1),
+    "GhostActiveBackground": transparent,
+    "GhostActiveBoxShadow": $activeShadow rgba($ghostBorderColor, 0.28)
+  );
+
+  @if $style == $primaryInverse {
+    // Overrides for primary-inverse to match what was previously the `light` button variant
+    @if $variable == "BorderColor" {
+      @return darken($colorBorderLight, 10)
+    }
+    @if $variable == "HoverBackground" {
+      @return darken($colorBackgroundLightest, 5)
+    }
+    @if $variable == "ActiveBackground" {
+      @return $colorBackgroundLightest
+    }
+    @if $variable == "ActiveBoxShadow" {
+      @return $activeShadow rgba($colorBorderLightest, 0.25)
+    }
+  }
+
+  @if $style == $success {
+    // Overrides for ghost hover states to ensure correct color contrast for a11y
+    @if $variable == "GhostHoverBackground" {
+      @return rgba($colorTextSuccess, 0.01)
+    }
+  }
+
+  @return map-get($map, $variable);
+};
+
+$transform: none;
+$hoverTransform: none;
+$fontFamily: $typographyFontFamily;
+$fontWeight: $typographyFontWeightNormal;
+$textTransform: none;
+$letterSpacing: normal;
+$borderRadius: $borderRadiusMedium;
+$borderStyle: $borderStyle;
+$borderWidth: $borderWidthSmall;
+
+$smallHeight: $formInputHeightSmall;
+$smallFontSize: $typographyFontSizeSmall;
+$smallPaddingHorizontal: $spacingXSmall;
+$smallPaddingTop: 0.375rem;
+$smallPaddingBottom: 0.3125rem;
+
+$mediumHeight: $formInputHeightMedium;
+$mediumFontSize: $typographyFontSizeMedium;
+$mediumPaddingHorizontal: $spacingSmall;
+$mediumPaddingTop: 0.5625rem;
+$mediumPaddingBottom: 0.5625rem;
+
+$largeHeight: $formInputHeightLarge;
+$largeFontSize: $typographyFontSizeLarge;
+$largePaddingHorizontal: $spacingMedium;
+$largePaddingTop: 0.6875rem;
+$largePaddingBottom: 0.6875rem;
+
+$lineHeight: $typographyLineHeightFit;
+
+$iconSizeSmall: 1rem;
+$iconSizeMedium: 1.25rem;
+$iconSizeLarge: 1.625rem;

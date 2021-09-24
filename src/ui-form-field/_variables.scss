@@ -1,0 +1,15 @@
+@import "../canvas-theme/theme";
+
+$formFieldClass: '.formField';
+
+%label {
+  all: initial;
+  display: block;
+  color: $colorTextDarkest;
+  font-family: $typographyFontFamily;
+  font-weight: $typographyFontWeightBold;
+  font-size: $typographyFontSizeMedium;
+  line-height: $typographyLineHeightFit;
+  margin: 0;
+  text-align: inherit;
+}

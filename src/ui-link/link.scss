@@ -1,0 +1,53 @@
+@import "variables";
+
+#{$linkClass} {
+  box-sizing: border-box;
+  font-family: $typographyFontFamily;
+  font-weight: $typographyFontWeightNormal;
+  transition: outline-color 0.2s;
+  vertical-align: baseline;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &[aria-disabled] {
+    @extend %disabledState;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+
+  @include colors;
+
+  &__icon {
+    &--start {
+      @extend %iconBase;
+      padding-inline-start: 0;
+      padding-inline-end: $spacingXxSmall;
+    }
+
+    &--end {
+      @extend %iconBase;
+      padding-inline-start: $spacingXxSmall;
+      padding-inline-end: 0;
+    }
+
+    &--iconOnly {
+      @extend %iconBase;
+      padding: 0;
+    }
+  }
+}
+
+button#{$linkClass} {
+  appearance: none;
+  user-select: text;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}

@@ -1,0 +1,404 @@
+@import "../../../utils/functions";
+@import "variables";
+
+%size-small {
+  font-size: $smallFontSize;
+  padding-inline-start: $smallPaddingHorizontal;
+  padding-inline-end: $smallPaddingHorizontal;
+
+  .button__children {
+    padding-block-start: $smallPaddingTop;
+    padding-block-end: $smallPaddingBottom;
+  }
+
+  .button__iconSVG {
+    font-size: $iconSizeSmall;
+  }
+
+  //&.hasOnlyIconVisible {
+  //  padding-inline-start: 0;
+  //  padding-inline-end: 0;
+  //  height: $smallHeight;
+  //  width: $smallHeight;
+  //}
+  //
+  //&.isCondensed {
+  //  .button__iconSVG {
+  //    font-size: $smallFontSize;
+  //  }
+  //}
+}
+
+%size-medium {
+  font-size: $mediumFontSize;
+  padding-inline-start: $mediumPaddingHorizontal;
+  padding-inline-end: $mediumPaddingHorizontal;
+
+  .button__children {
+    padding-block-start: $mediumPaddingTop;
+    padding-block-end: $mediumPaddingBottom;
+  }
+
+  .button__iconSVG {
+    font-size: $iconSizeMedium;
+  }
+
+  //&.hasOnlyIconVisible {
+  //  padding-inline-start: 0;
+  //  padding-inline-end: 0;
+  //  height: $mediumHeight;
+  //  width: $mediumHeight;
+  //}
+  //
+  //&.isCondensed {
+  //  .button__iconSVG {
+  //    font-size: $mediumFontSize;
+  //  }
+  //}
+}
+
+%size-large {
+  font-size: $largeFontSize;
+  padding-inline-start: $largePaddingHorizontal;
+  padding-inline-end: $largePaddingHorizontal;
+
+  .button__children {
+    padding-block-start: $largePaddingTop;
+    padding-block-end: $largePaddingBottom;
+  }
+
+  .button__iconSVG {
+    font-size: $iconSizeLarge;
+  }
+
+  //&.hasOnlyIconVisible {
+  //  padding-inline-start: 0;
+  //  padding-inline-end: 0;
+  //  height: $largeHeight;
+  //  width: $largeHeight;
+  //}
+  //
+  //&.isCondensed {
+  //  .button__iconSVG {
+  //    font-size: $largeFontSize;
+  //  }
+  //}
+}
+
+@mixin getColorVariant($variant: 'secondary', $style: 'default') {
+  @if $variant == "primary" {
+    @if $style == 'default' {
+      color: getColorVariant($primary, "Color");
+      background: getColorVariant($primary, "Background");
+      border-color: getColorVariant($primary, "BorderColor");
+    } @else if $style == 'ghost' {
+      color: getColorVariant($primary, "GhostColor");
+      background: getColorVariant($primary, "GhostBackground");
+      border-color: getColorVariant($primary, "GhostBorderColor");
+    }
+  }
+
+  @if $variant == "secondary" {
+    @if $style == 'default' {
+      color: getColorVariant($secondary, "Color");
+      background: getColorVariant($secondary, "Background");
+      border-color: getColorVariant($secondary, "BorderColor");
+    } @else if $style == 'ghost' {
+      color: getColorVariant($secondary, "GhostColor");
+      background: getColorVariant($secondary, "GhostBackground");
+      border-color: getColorVariant($secondary, "GhostBorderColor");
+    }
+  }
+
+  @if $variant == "success" {
+    @if $style == 'default' {
+      color: getColorVariant($success, "Color");
+      background: getColorVariant($success, "Background");
+      border-color: getColorVariant($success, "BorderColor");
+    } @else if $style == 'ghost' {
+      color: getColorVariant($success, "GhostColor");
+      background: getColorVariant($success, "GhostBackground");
+      border-color: getColorVariant($success, "GhostBorderColor");
+    }
+  }
+
+  @if $variant == "danger" {
+    @if $style == 'default' {
+      color: getColorVariant($danger, "Color");
+      background: getColorVariant($danger, "Background");
+      border-color: getColorVariant($danger, "BorderColor");
+    } @else if $style == 'ghost' {
+      color: getColorVariant($danger, "GhostColor");
+      background: getColorVariant($danger, "GhostBackground");
+      border-color: getColorVariant($danger, "GhostBorderColor");
+    }
+  }
+
+  @if $variant == "primary-inverse" {
+    @if $style == 'default' {
+      color: getColorVariant($primaryInverse, "Color");
+      background: getColorVariant($primaryInverse, "Background");
+      border-color: getColorVariant($primaryInverse, "BorderColor");
+    } @else if $style == 'ghost' {
+      color: getColorVariant($primaryInverse, "GhostColor");
+      background: getColorVariant($primaryInverse, "GhostBackground");
+      border-color: getColorVariant($primaryInverse, "GhostBorderColor");
+    }
+  }
+};
+
+
+
+%baseButton {
+  box-sizing: border-box;
+  font-family: $typographyFontFamily;
+  max-width: 100%;
+  overflow: visible;
+
+  display: inline-block;
+  vertical-align: middle;
+
+  color: $colorTextDarkest;
+  background: none;
+
+  position: relative;
+
+  padding: 0;
+  border-radius: $borderRadiusMedium;
+  border-width: 0;
+  width: auto;
+  cursor: pointer;
+
+  .isDisabled {
+    opacity: 0.5;
+  }
+
+  &:not(.isDisabled) {
+    appearance: none;
+    text-decoration: none;  /* for links styled as buttons */
+    touch-action: manipulation;
+
+    &::-moz-focus-inner {
+      border: 0; /* removes default dotted focus outline in Firefox */
+    }
+
+    * {
+      pointer-events: none; /* Ensures that button or link is always the event target */
+    }
+
+    &:active {
+      &.button--primary .button__wrapper {
+        background: getColorVariant($primary, "ActiveBackground");
+        box-shadow: getColorVariant($primary, "ActiveBoxShadow");
+      }
+
+      .button__wrapper,
+      &.button--secondary .button__wrapper {
+        background: getColorVariant($secondary, "ActiveBackground");
+        box-shadow: getColorVariant($secondary, "ActiveBoxShadow");
+      }
+
+      &.button--primary-inverse .button__wrapper {
+        background: getColorVariant($primaryInverse, "ActiveBackground");
+        box-shadow: getColorVariant($primaryInverse, "ActiveBoxShadow");
+      }
+
+      &.button--success .button__wrapper {
+        background: getColorVariant($success, "ActiveBackground");
+        box-shadow: getColorVariant($success, "ActiveBoxShadow");
+      }
+
+      &.button--danger .button__wrapper {
+        background: getColorVariant($danger, "ActiveBackground");
+        box-shadow: getColorVariant($danger, "ActiveBoxShadow");
+      }
+
+      &.button--withoutBackground.button--primary .button__wrapper {
+        background: getColorVariant($primary, "GhostActiveBackground");
+        box-shadow: getColorVariant($primary, "GhostActiveBoxShadow");
+      }
+
+      &.button--withoutBackground .button__wrapper,
+      &.button--withoutBackground.button--secondary .button__wrapper {
+        background: getColorVariant($secondary, "GhostActiveBackground");
+        box-shadow: getColorVariant($secondary, "GhostActiveBoxShadow");
+      }
+
+      &.button--withoutBackground.button--primary-inverse .button__wrapper {
+        background: getColorVariant($primaryInverse, "GhostActiveBackground");
+        box-shadow: getColorVariant($primaryInverse, "GhostActiveBoxShadow");
+      }
+
+      &.button--withoutBackground.button--success .button__wrapper {
+        background: getColorVariant($success, "GhostActiveBackground");
+        box-shadow: getColorVariant($success, "GhostActiveBoxShadow");
+      }
+
+      &.button--withoutBackground.button--danger .button__wrapper {
+        background: getColorVariant($danger, "GhostActiveBackground");
+        box-shadow: getColorVariant($danger, "GhostActiveBoxShadow");
+      }
+    }
+
+    &:hover {
+      &.button--primary .button__wrapper {
+        background: getColorVariant($primary, "HoverBackground");
+      }
+
+      & .button__wrapper,
+      &.button--secondary .button__wrapper {
+        background: getColorVariant($secondary, "HoverBackground");
+      }
+
+      &.button--primary-inverse .button__wrapper {
+        background: getColorVariant($primaryInverse, "HoverBackground");
+      }
+
+      &.button--success .button__wrapper {
+        background: getColorVariant($success, "HoverBackground");
+      }
+
+      &.button--danger .button__wrapper {
+        background: getColorVariant($danger, "HoverBackground");
+      }
+
+      &.button--withoutBackground.button--primary .button__wrapper {
+        background: getColorVariant($primary, "GhostHoverBackground");
+      }
+
+      &.button--withoutBackground .button__wrapper,
+      &.button--withoutBackground.button--secondary .button__wrapper {
+        background: getColorVariant($secondary, "GhostHoverBackground");
+      }
+
+      &.button--withoutBackground.button--primary-inverse .button__wrapper {
+        background: getColorVariant($primaryInverse, "GhostHoverBackground");
+      }
+
+      &.button--withoutBackground.button--success .button__wrapper {
+        background: getColorVariant($success, "GhostHoverBackground");
+      }
+
+      &.button--withoutBackground.button--danger .button__wrapper {
+        background: getColorVariant($danger, "GhostHoverBackground");
+      }
+    }
+  }
+}
+
+.button__wrapper {
+  @extend %size-medium;
+
+  .button--withoutBorder & {
+    border-style: none;
+  }
+
+  box-sizing: border-box;
+  width: 100%;
+  display: block;
+  direction: inherit;
+  user-select: none;
+  transition: background 0.2s, transform 0.2s;
+  transform: $transform;
+  font-family: $fontFamily;
+  font-weight: $fontWeight;
+  text-transform: $textTransform;
+  letter-spacing: $letterSpacing;
+  border-style: $borderStyle;
+  border-width: $borderWidth;
+  border-radius: $borderRadius;
+  line-height: $lineHeight;
+
+  text-align: center;
+
+  &:hover {
+    transform: $hoverTransform;
+  }
+
+  .button--small & {
+    @extend %size-small;
+  }
+
+  .button--medium & {
+    @extend %size-medium;
+  }
+
+  .button--large & {
+    @extend %size-large;
+  }
+
+  .button--primary & {
+    @include getColorVariant("primary");
+  }
+
+  &,
+  .button--secondary & {
+    @include getColorVariant("secondary");
+  }
+
+  .button--success & {
+    @include getColorVariant("success");
+  }
+
+  .button--danger & {
+    @include getColorVariant("danger");
+  }
+
+  .button--primary-inverse & {
+    @include getColorVariant("primary-inverse");
+  }
+
+  .button--withoutBackground.button--primary & {
+    @include getColorVariant("primary", "ghost");
+  }
+
+  .button--withoutBackground &,
+  .button--withoutBackground.button--secondary & {
+    @include getColorVariant("secondary", "ghost");
+  }
+
+  .button--withoutBackground.button--success & {
+    @include getColorVariant("success", "ghost");
+  }
+
+  .button--withoutBackground.button--danger & {
+    @include getColorVariant("danger", "ghost");
+  }
+
+  .button--withoutBackground.button--primary-inverse & {
+    @include getColorVariant("primary-inverse", "ghost");
+  }
+}
+
+.button__children {
+  display: block;
+}
+
+.button__iconSVG {
+  display: flex;
+  align-items: center;
+}
+
+/*
+
+static defaultProps = {
+  children: null,
+  type: 'button',
+  size: 'medium',
+  elementRef: (el) => {},
+  as: 'button',
+  // Leave interaction default undefined so that `disabled` and `readOnly` can also be supplied
+  interaction: undefined,
+  color: 'secondary',
+  focusColor: undefined,
+  shape: 'rectangle',
+  display: 'inline-block',
+  textAlign: 'start',
+  withBackground: true,
+  withBorder: true,
+  isCondensed: false,
+  margin: '0',
+  cursor: 'pointer',
+}
+
+*/

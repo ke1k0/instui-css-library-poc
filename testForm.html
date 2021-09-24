@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Instructure UI CSS Components</title>
+
+        <meta name="description" content="Instructure UI CSS Components" />
+
+        <link rel="stylesheet" href="dist/test-form/base.css">
+        <link rel="stylesheet" href="dist/test-form/instui.css">
+        <link rel="stylesheet" href="dist/test-form/instuiOverrides.css">
+
+    </head>
+
+    <body>
+    <div id="app">
+        <div class="app">
+            <img class="app__image" src="https://images.pexels.com/photos/4930607/pexels-photo-4930607.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Feature">
+
+            <h1 class="app__title">
+                Awesome headline
+            </h1>
+
+            <h3 class="app__subtitle">
+                Some description goes here.
+            </h3>
+
+            <button class="app__button app__signIn button button--withoutBackground button--primary">
+                Sign In Here
+            </button>
+
+            <hr class="app__divider">
+
+            <h2 class="app__registerTitle">
+                Don't have an account? Sign&nbsp;up&nbsp;here!
+            </h2>
+
+            <form class="app__form form" action="">
+                <div class="form__input form__name formField">
+                    <label for="name" class="formField__label">
+                        Full Name
+                    </label>
+                    <input id="name" class="formField__input textInput" type="text" placeholder="Enter Full Name" />
+                </div>
+
+                <div class="form__input form__email formField">
+                    <label for="email" class="formField__label">
+                        Email
+                    </label>
+                    <input id="email" class="formField__input textInput" type="text" placeholder="Enter Email" />
+                </div>
+
+                <div class="form__input form__emailConfirm formField">
+                    <label for="emailConfirm" class="formField__label">
+                        Confirm Email
+                    </label>
+                    <input id="emailConfirm" class="formField__input textInput" type="text" placeholder="Enter Email" />
+                </div>
+
+                <div class="form__input form__other formField">
+                    <label for="other" class="formField__label">
+                        Something Else
+                    </label>
+                    <input id="other" class="formField__input textInput" type="text" placeholder="Enter Something Else" />
+                    <span class="form__hint formField__message">This is a hint message, this is how you do it.</span>
+                </div>
+
+                <div class="form__input form__terms checkbox">
+                    <input id="1" class="checkbox__input" type="checkbox" value="Input" />
+                    <label for="1" class="checkbox__label">
+                        <span>I accept the <a href="#" class="form__link link">Terms</a> and <a href="#" class="form__link link">Privacy Policy</a>.</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="app__button form__input form__signIn button button--primary">
+                    Register New Account
+                </button>
+            </form>
+        </div>
+    </div>
+    </body>
+</html>

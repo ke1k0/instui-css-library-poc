@@ -1,0 +1,16 @@
+{
+  "name": "@instructure/css-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "sass": "^1.41.1"
+  },
+  "devDependencies": {
+    "yarn": "^1.22.10"
+  },
+  "scripts": {
+    "build": "sass src:dist",
+    "dev": "sass --watch src:dist"
+  }
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Instructure UI CSS Components</title>
+
+        <style type="text/css">
+            body {
+                font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont,
+                'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+                'Droid Sans', 'Helvetica Neue', sans-serif;
+            }
+        </style>
+
+        <meta name="description" content="Instructure UI CSS Components" />
+
+        <link rel="stylesheet" href="dist/canvas-theme/theme.css">
+<!--        <link rel="stylesheet" href="dist/ui-buttons/v1/buttons.css">-->
+        <link rel="stylesheet" href="dist/ui-text-input/textInput.css">
+
+    </head>
+
+    <body>
+    <div id="app">
+        <div class="inputs" style="padding: 20px; background:#efefef;">
+            <div style="margin-top: 20px;">
+                <input class="textInput" type="text" value="Input" />
+                <input class="textInput" type="text" placeholder="Placeholder" style="margin-top: 10px" />
+            </div>
+
+            <div style="margin-top: 30px;">
+                <input class="textInput textInput--small" type="text" value="Input" />
+                <input class="textInput textInput--small" type="text" placeholder="Placeholder"style="margin-top: 10px" />
+            </div>
+
+            <div style="margin-top: 30px;">
+                <input class="textInput textInput--large" type="text" value="Input" />
+                <input class="textInput textInput--large" type="text" placeholder="Placeholder"style="margin-top: 10px" />
+            </div>
+
+            <div style="margin-top: 30px;">
+                <input class="textInput isDisabled" type="text" value="Input" />
+                <input class="textInput isDisabled" type="text" placeholder="Placeholder"style="margin-top: 10px" />
+            </div>
+
+            <div style="margin-top: 30px;">
+                <input class="textInput isInvalid" type="text" value="Input" />
+                <input class="textInput isInvalid" type="text" placeholder="Placeholder"style="margin-top: 10px" />
+            </div>
+
+        </div>
+
+        <div class="inputs" style="padding: 20px; background:#efefef; margin-top: 30px;">
+            <div style="margin-top: 20px;">
+                <div class="textInputWrapper">
+                    <input class="textInputWrapper__input" type="text" value="Input" />
+                </div>
+                <div class="textInputWrapper" style="margin-top: 10px">
+                    <input class="textInputWrapper__input" type="text" placeholder="Placeholder" />
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="textInputWrapper">
+                    <input class="textInputWrapper__input textInputWrapper__input--small" type="text" value="Input" />
+                </div>
+                <div class="textInputWrapper" style="margin-top: 10px">
+                    <input class="textInputWrapper__input textInputWrapper__input--small" type="text" placeholder="Placeholder" />
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="textInputWrapper">
+                    <input class="textInputWrapper__input textInputWrapper__input--large" type="text" value="Input" />
+                </div>
+                <div class="textInputWrapper" style="margin-top: 10px">
+                <input class="textInputWrapper__input textInputWrapper__input--large" type="text" placeholder="Placeholder" />
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="textInputWrapper isDisabled">
+                    <input disabled class="textInputWrapper__input" type="text" value="Input" />
+                </div>
+                <div class="textInputWrapper isDisabled" style="margin-top: 10px">
+                    <input disabled class="textInputWrapper__input" type="text" placeholder="Placeholder" />
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="textInputWrapper isInvalid">
+                    <input class="textInputWrapper__input" type="text" value="Input" />
+                </div>
+                <div class="textInputWrapper isInvalid" style="margin-top: 10px">
+                    <input class="textInputWrapper__input" type="text" placeholder="Placeholder" />
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;">
+                <div class="textInputWrapper">
+                    <svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M790.588235,1468.23529 C416.865882,1468.23529 112.941176,1164.31059 112.941176,790.588235 C112.941176,416.865882 416.865882,112.941176 790.588235,112.941176 C1164.31059,112.941176 1468.23529,416.865882 1468.23529,790.588235 C1468.23529,1164.31059 1164.31059,1468.23529 790.588235,1468.23529 L790.588235,1468.23529 Z M1387.36941,1307.52 C1507.76471,1168.82824 1581.17647,988.235294 1581.17647,790.588235 C1581.17647,354.748235 1226.42824,2.84217094e-14 790.588235,2.84217094e-14 C354.748235,2.84217094e-14 2.84217094e-14,354.748235 2.84217094e-14,790.588235 C2.84217094e-14,1226.42824 354.748235,1581.17647 790.588235,1581.17647 C988.235294,1581.17647 1168.82824,1507.76471 1307.52,1387.36941 L1823.54824,1903.51059 L1903.51059,1823.54824 L1387.36941,1307.52 Z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
+                    </svg>
+                    <input class="textInputWrapper__input" type="text" value="Input" />
+                    <svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path transform="matrix(0 1 1 0 .153 -.153)" d="M526.298905 0L434 92.1683552 1301.63582 959.934725 434 1827.57054 526.298905 1920 1486.23363 959.934725z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
+                    </svg>
+                </div>
+                <div class="textInputWrapper" style="margin-top: 10px">
+                    <svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M790.588235,1468.23529 C416.865882,1468.23529 112.941176,1164.31059 112.941176,790.588235 C112.941176,416.865882 416.865882,112.941176 790.588235,112.941176 C1164.31059,112.941176 1468.23529,416.865882 1468.23529,790.588235 C1468.23529,1164.31059 1164.31059,1468.23529 790.588235,1468.23529 L790.588235,1468.23529 Z M1387.36941,1307.52 C1507.76471,1168.82824 1581.17647,988.235294 1581.17647,790.588235 C1581.17647,354.748235 1226.42824,2.84217094e-14 790.588235,2.84217094e-14 C354.748235,2.84217094e-14 2.84217094e-14,354.748235 2.84217094e-14,790.588235 C2.84217094e-14,1226.42824 354.748235,1581.17647 790.588235,1581.17647 C988.235294,1581.17647 1168.82824,1507.76471 1307.52,1387.36941 L1823.54824,1903.51059 L1903.51059,1823.54824 L1387.36941,1307.52 Z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
+                    </svg>
+                    <input class="textInputWrapper__input" type="text" placeholder="Placeholder" />
+                    <svg viewBox="0 0 1920 1920" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                        <path transform="matrix(0 1 1 0 .153 -.153)" d="M526.298905 0L434 92.1683552 1301.63582 959.934725 434 1827.57054 526.298905 1920 1486.23363 959.934725z" stroke="none" stroke-width="1" fill-rule="evenodd"/>
+                    </svg>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </body>
+</html>

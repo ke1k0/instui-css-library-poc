@@ -1,0 +1,11 @@
+:root {
+  --borderRadiusSmall: "0.125rem";
+  --borderRadiusMedium: "0.25rem";
+  --borderRadiusLarge: "0.5rem";
+  --borderWidthSmall: "0.0625rem";
+  --borderWidthMedium: "0.125rem";
+  --borderWidthLarge: "0.25rem";
+  --borderStyle: "solid";
+}
+
+/*# sourceMappingURL=borders.css.map */

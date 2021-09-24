@@ -1,0 +1,86 @@
+:root {
+  --borderRadiusSmall: "0.125rem";
+  --borderRadiusMedium: "0.25rem";
+  --borderRadiusLarge: "0.5rem";
+  --borderWidthSmall: "0.0625rem";
+  --borderWidthMedium: "0.125rem";
+  --borderWidthLarge: "0.25rem";
+  --borderStyle: "solid";
+}
+
+:root {
+  --breakpointXxSmall: 8em;
+  --breakpointXSmall: 16em;
+  --breakpointSmall: 30em;
+  --breakpointMedium: 48em;
+  --breakpointLarge: 62em;
+  --breakpointXLarge: 75em;
+  --breakpointMaxWidth: 61.9375em;
+}
+
+:root {
+  --colorBrand: $brand;
+  --colorLink: $link;
+  --colorElectric: $electric;
+  --colorShamrock: $shamrock;
+  --colorBarney: $barney;
+  --colorCrimson: $crimson;
+  --colorFire: $fire;
+  --colorLicorice: $licorice;
+  --colorOxford: $oxford;
+  --colorAsh: $ash;
+  --colorSlate: $slate;
+  --colorTiara: $tiara;
+  --colorPorcelain: $porcelain;
+  --colorWhite: $white;
+}
+
+:root {
+  --colorTextDarkest: $licorice;
+  --colorTextDark: $ash;
+  --colorTextLight: $porcelain;
+  --colorTextLightest: $white;
+  --colorTextBrand: $brand;
+  --colorTextLink: $link;
+  --colorTextAlert: $barney;
+  --colorTextInfo: $brand;
+  --colorTextSuccess: $shamrock;
+  --colorTextDanger: $crimson;
+  --colorTextWarning: $fire;
+}
+
+:root {
+  --colorBackgroundDarkest: $licorice;
+  --colorBackgroundDark: $ash;
+  --colorBackgroundMedium: $tiara;
+  --colorBackgroundLight: $porcelain;
+  --colorBackgroundLightest: $white;
+  --colorBackgroundBrand: $brand;
+  --colorBackgroundBrandSecondary: $oxford;
+  --colorBackgroundAlert: $barney;
+  --colorBackgroundInfo: $brand;
+  --colorBackgroundSuccess: $shamrock;
+  --colorBackgroundDanger: $crimson;
+  --colorBackgroundWarning: $fire;
+}
+
+:root {
+  --colorBorderLightest: $white;
+  --colorBorderLight: $porcelain;
+  --colorBorderMedium: $tiara;
+  --colorBorderDark: $ash;
+  --colorBorderDarkest: $licorice;
+  --colorBorderBrand: $brand;
+  --colorBorderAlert: $barney;
+  --colorBorderInfo: $brand;
+  --colorBorderSuccess: $shamrock;
+  --colorBorderDanger: $crimson;
+  --colorBorderWarning: $fire;
+  --colorBorderDebug: $crimson;
+}
+
+body {
+  color: "#FFFFFF";
+}
+
+/*# sourceMappingURL=theme.css.map */

@@ -1,0 +1,80 @@
+@import "../utils/common";
+@import "../canvas-theme/theme";
+
+$checkboxClass: '.checkbox';
+
+$facadeSizeSmall: 1rem;
+$facadeSizeMedium: 1.25rem;
+$facadeSizeLarge: 1.75rem;
+
+$iconSizeSmall: 0.625rem;
+$iconSizeMedium: 0.75rem;
+$iconSizeLarge: 1rem;
+
+@function getIcon ($type: 'checked', $size: $iconSizeMedium) {
+  $props: "xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1920' rotate='0' width='#{$size}' height='#{$size}' fill='%23fff' aria-hidden='true' role='presentation' focusable='false' style='width: 100%25; height: 100%25;'";
+
+  @if ($type == 'checked') {
+    @return url("data:image/svg+xml,%3Csvg #{$props}%3E%3Cg role='presentation'%3E%3Cpath d='M1743.8579 267.012456L710.746654 1300.1237 176.005086 765.382131 0 941.387217 710.746654 1652.25843 1919.98754 443.142104z' fill-rule='evenodd' stroke='none' stroke-width='1'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  @if ($type == 'indeterminate') {
+    @return url("data:image/svg+xml,%3Csvg #{$props}%3E%3Cg role='presentation'%3E%3Crect x='140' y='820' width='1640' height='280'%3E%3C/rect%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  @return '';
+}
+
+@mixin sizes {
+  font-size: $typographyFontSizeMedium;
+
+  &::before {
+    background-size: $iconSizeMedium;
+    width: $facadeSizeMedium;
+    height: $facadeSizeMedium;
+  }
+
+  input:checked + &::before {
+    background-image: getIcon('checked');
+  }
+
+  .isIndeterminate input + &::before {
+    background-image: getIcon('indeterminate')
+  }
+
+  #{$checkboxClass}--small & {
+    font-size: $typographyFontSizeSmall;
+
+    &::before {
+      background-size: $iconSizeSmall;
+      width: $facadeSizeSmall;
+      height: $facadeSizeSmall;
+    }
+  }
+
+  #{$checkboxClass}--small input:checked + &::before {
+    background-image: getIcon('checked', $iconSizeSmall);
+  }
+
+  #{$checkboxClass}--small.isIndeterminate input + &::before {
+    background-image: getIcon('indeterminate', $iconSizeSmall)
+  }
+
+  #{$checkboxClass}--large & {
+    font-size: $typographyFontSizeLarge;
+
+    &::before {
+      background-size: $iconSizeLarge;
+      width: $facadeSizeLarge;
+      height: $facadeSizeLarge;
+    }
+  }
+
+  #{$checkboxClass}--large input:checked + &::before {
+    background-image: getIcon('checked', $iconSizeLarge);
+  }
+
+  #{$checkboxClass}--large.isIndeterminate input + &::before {
+    background-image: getIcon('indeterminate', $iconSizeLarge)
+  }
+}

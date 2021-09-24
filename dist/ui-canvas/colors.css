@@ -1,0 +1,62 @@
+:root {
+  --colorBrand: $brand;
+  --colorLink: $link;
+  --colorElectric: $electric;
+  --colorShamrock: $shamrock;
+  --colorBarney: $barney;
+  --colorCrimson: $crimson;
+  --colorFire: $fire;
+  --colorLicorice: $licorice;
+  --colorOxford: $oxford;
+  --colorAsh: $ash;
+  --colorSlate: $slate;
+  --colorTiara: $tiara;
+  --colorPorcelain: $porcelain;
+  --colorWhite: $white;
+}
+
+:root {
+  --colorTextDarkest: $licorice;
+  --colorTextDark: $ash;
+  --colorTextLight: $porcelain;
+  --colorTextLightest: $white;
+  --colorTextBrand: $brand;
+  --colorTextLink: $link;
+  --colorTextAlert: $barney;
+  --colorTextInfo: $brand;
+  --colorTextSuccess: $shamrock;
+  --colorTextDanger: $crimson;
+  --colorTextWarning: $fire;
+}
+
+:root {
+  --colorBackgroundDarkest: $licorice;
+  --colorBackgroundDark: $ash;
+  --colorBackgroundMedium: $tiara;
+  --colorBackgroundLight: $porcelain;
+  --colorBackgroundLightest: $white;
+  --colorBackgroundBrand: $brand;
+  --colorBackgroundBrandSecondary: $oxford;
+  --colorBackgroundAlert: $barney;
+  --colorBackgroundInfo: $brand;
+  --colorBackgroundSuccess: $shamrock;
+  --colorBackgroundDanger: $crimson;
+  --colorBackgroundWarning: $fire;
+}
+
+:root {
+  --colorBorderLightest: $white;
+  --colorBorderLight: $porcelain;
+  --colorBorderMedium: $tiara;
+  --colorBorderDark: $ash;
+  --colorBorderDarkest: $licorice;
+  --colorBorderBrand: $brand;
+  --colorBorderAlert: $barney;
+  --colorBorderInfo: $brand;
+  --colorBorderSuccess: $shamrock;
+  --colorBorderDanger: $crimson;
+  --colorBorderWarning: $fire;
+  --colorBorderDebug: $crimson;
+}
+
+/*# sourceMappingURL=colors.css.map */
